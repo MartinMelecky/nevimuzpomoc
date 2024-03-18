@@ -1,0 +1,24 @@
+{% extends "Biblecz/layout.html" %}
+
+{% block body %}
+
+   zde bude kód pro danou stránku, která se právě renderuje
+
+   <h2>Passengers</h2>
+   {% for p in passengers %}
+       <li>{{p.first}} {{p.last}}</li>
+   {% empty %}
+       No passengers.
+   {% endfor %}
+
+   <h2>Add Passenger</h2>
+    <form action="{% url 'vers' kniha.id %}" method="POST">
+        {% csrf_token %}
+        <select name="passenger" id="passenger">
+            {% for passanger in non_passengers  %}
+            <option value="{{ passanger.id }}">{{ passanger }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add Passenger">
+    </form>
+{% endblock %}
