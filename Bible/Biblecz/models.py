@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Vers(models.Model):
-    obsahverse = models.CharField(max_length=100,)
+    obsahverse = models.CharField(max_length=200,)
     cisloverse = models.IntegerField(max_length=60)
 
     def __str__(self):
