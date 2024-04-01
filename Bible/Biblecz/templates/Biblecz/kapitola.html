@@ -1,0 +1,16 @@
+{% extends "Bibilecz/layout.html" %}
+
+{% block body %}
+
+<h2>Kapitola</h2>
+<ul>
+    <li><a href="{% url 'kapitola' od.id %}">
+        {{ od.cislokapitoly }}
+    </a></li>
+</ul>
+
+    
+
+<a href="{% url 'index' %}"> Zpátky</a>
+
+{% endblock %}

@@ -1,24 +1,20 @@
 from django.shortcuts import render, redirect
-from .models import Vers
+from .models import Verse
 # Create your views here.
 from .models import *
 from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request, "Biblecz/index.html", {
-        "Bibelcz": Kniha.objects.all(),
+        "kniha": Kniha.objects.all()
     })
-def kniha(request, kniha_id):
-    k = Kniha.objects.get(pk= kniha_id)
-    return render(request, "Biblecz/Bible.html", {
-          "kniha": k ,
-          "vers": Vers.objects.all(),
+def kapitola(request, kapitola_id):
+    o = Kapitola.objects.get(pk=kapitola_id)
+    return render(request, "Biblecz/oddeleni.html", {
+          "od": o,
     })
-
-
-def vers(request, kniha_id):
-    if request.method == "POST":
-        kniha = Kniha.objects.get(pk=kniha_id)
-        passenger = Vers.objects.get(pk=int(request.POST["vers"]))
-        passenger.kniha.add(kniha)
-        return redirect(f'Biblecz/{kniha_id[0]}')
+def verse(request, verse_id):
+    p = Verse.objects.get(pk=verse_id)
+    return render(request, "Biblecz/pacienti.html", {
+          "pa": p,
+    })

@@ -2,14 +2,17 @@
 
 {% block body %}
 
-   
-   <h2>Kniha a Verše</h2>
+<h2>Nemocnice</h2>
 <ul>
-   {% for p in Bibelcz %}
-       <li><a href="{% url 'kniha' p.id %}">
-       {{p.nazev}}
+    {% for n in kniha %}
+    <li><a href="{% url 'kapitola' n.id %}">
+        {{ n.nazevknihy }} {{ n.kapitola }}
     </a></li>
-   {% endfor %}
+    {%endfor%}
 </ul>
+
+    
+
+
 
 {% endblock %}
