@@ -1,10 +1,10 @@
-{% extends "Bibilecz/layout.html" %}
+{% extends "Biblecz/layout.html" %}
 
 {% block body %}
 
 <h2>Kapitola</h2>
 <ul>
-    <li><a href="{% url 'kapitola' od.id %}">
+    <li><a href="{% url 'verse' od.id %}">
         {{ od.cislokapitoly }}
     </a></li>
 </ul>

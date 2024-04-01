@@ -10,11 +10,11 @@ def index(request):
     })
 def kapitola(request, kapitola_id):
     o = Kapitola.objects.get(pk=kapitola_id)
-    return render(request, "Biblecz/oddeleni.html", {
+    return render(request, "Biblecz/kapitola.html", {
           "od": o,
     })
 def verse(request, verse_id):
     p = Verse.objects.get(pk=verse_id)
-    return render(request, "Biblecz/pacienti.html", {
+    return render(request, "Biblecz/verse.html", {
           "pa": p,
     })

@@ -2,11 +2,11 @@
 
 {% block body %}
 
-<h2>Nemocnice</h2>
+<h2>Knihy</h2>
 <ul>
     {% for n in kniha %}
     <li><a href="{% url 'kapitola' n.id %}">
-        {{ n.nazevknihy }} {{ n.kapitola }}
+        {{ n.nazevknihy }} 
     </a></li>
     {%endfor%}
 </ul>
