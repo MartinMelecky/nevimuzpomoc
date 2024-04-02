@@ -4,10 +4,13 @@
 
 <h2>Verse</h2>
 <ul>
+    {% for i in verse %}
     <li>
-        {{ pa.cisloverse }} {{ pa.obsahverse }}
-        </li>
+        {{i.cisloverse}} - {{ i.obsahverse }} 
+    </li>
+    {%endfor%}
 </ul>
+
 
     
 

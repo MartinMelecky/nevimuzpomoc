@@ -5,7 +5,7 @@
 <h2>Knihy</h2>
 <ul>
     {% for n in kniha %}
-    <li><a href="{% url 'kapitola' n.id %}">
+    <li><a href="{% url 'kniha' n.id %}">
         {{ n.nazevknihy }} 
     </a></li>
     {%endfor%}

@@ -2,11 +2,13 @@
 
 {% block body %}
 
-<h2>Kapitola</h2>
+<h2>Kapitoly</h2>
 <ul>
-    <li><a href="{% url 'verse' od.id %}">
-        {{ od.cislokapitoly }}
+    {% for i in ra %}
+    <li><a href="{% url 'kapitoly' i.id %}">
+        {{ i.cislokapitoly }} 
     </a></li>
+    {%endfor%}
 </ul>
 
     
